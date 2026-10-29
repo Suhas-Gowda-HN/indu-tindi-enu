@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Indu Tindi Enu? | ಇಂದು ತಿಂಡಿ ಏನು? - South Indian Breakfast</title>
+  <meta name="description" content="What's for breakfast today? A daily South Indian breakfast suggestion app featuring Karnataka classics, dosa pools, rice baths, rotis and batter reminders.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍛</text></svg>">
+</head>
+<body>
+
+  <!-- Temple-border accent top strip -->
+  <div class="temple-border-stripe"></div>
+
+  <!-- Header Section -->
+  <header class="app-header">
+    <div class="header-content">
+      <div class="brand-section">
+        <div class="brand-icon">🍛</div>
+        <div>
+          <h1 class="brand-title" id="brand-title-text">Indu Tindi Enu?</h1>
+          <p class="brand-subtitle" id="brand-sub-text">What's for breakfast today? · ಇಂದು ತಿಂಡಿ ಏನು?</p>
+        </div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Desktop Navigation">
+        <button class="nav-btn-desktop active" data-tab="today"><span>☀️</span> <span class="nav-label" data-en="Today" data-kn="ಇಂದು">Today</span></button>
+        <button class="nav-btn-desktop" data-tab="week"><span>📅</span> <span class="nav-label" data-en="Week" data-kn="ವಾರ">Week</span></button>
+        <button class="nav-btn-desktop" data-tab="batter"><span>🧂</span> <span class="nav-label" data-en="Batter" data-kn="ಹಿಟ್ಟು">Batter</span></button>
+        <button class="nav-btn-desktop" data-tab="grocery"><span>🛒</span> <span class="nav-label" data-en="Grocery" data-kn="ಪಟ್ಟಿ">Grocery</span></button>
+        <button class="nav-btn-desktop" data-tab="more"><span>⚙️</span> <span class="nav-label" data-en="More" data-kn="ಇನ್ನಷ್ಟು">More</span></button>
+      </nav>
+
+      <!-- Language Toggle -->
+      <div class="header-actions">
+        <button class="lang-toggle-btn" id="lang-toggle-btn" title="Toggle Kannada / English">
+          <span>🌐</span> <span id="lang-btn-label">ಕನ್ನಡ</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-container">
+
+    <!-- ==========================================
+         TAB 1: TODAY
+         ========================================== -->
+    <section id="tab-today" class="tab-content active">
+
+      <!-- Day Quick-Selector Bar -->
+      <div class="day-selector-card">
+        <div class="day-selector-header">
+          <div class="day-selector-title">
+            <span>🗓️</span> <span id="schedule-title-text">Today's Category & Schedule</span>
+          </div>
+          <button class="today-jump-btn" id="jump-to-actual-today-btn">
+            <span>↺</span> <span id="reset-today-label">Today</span>
+          </button>
+        </div>
+
+        <div class="days-scroll-list" id="days-scroll-container">
+          <!-- Injected via JavaScript: Sun, Mon, Tue, Wed, Thu, Fri, Sat -->
+        </div>
+      </div>
+
+      <!-- HERO: Featured Breakfast -->
+      <div class="hero-card" id="featured-hero-card">
+        <div class="hero-banner">
+          <div class="hero-banner-label">
+            <span id="hero-banner-icon">✨</span>
+            <span id="hero-banner-text">Today's Recommendation</span>
+          </div>
+          <span class="category-badge" id="hero-category-badge">🍚 Rice</span>
+        </div>
+
+        <div class="hero-body">
+          <!-- Brass Thali Plate Visual (replaces photo) -->
+          <div class="hero-visual-section" id="hero-visual-section">
+            <div class="hero-visual-bg">
+              <div class="hero-visual-bg-gradient" id="hero-visual-bg-gradient"></div>
+            </div>
+            <div class="hero-kolam-dots"></div>
+            <div class="hero-badges-overlay" id="hero-badges-container">
+              <!-- Special Badges like Mandya Special ⭐ or Egg 🥚 or Batter 🧂 -->
+            </div>
+            <div class="dish-visual-plate size-hero" id="hero-plate">
+              <div class="plate-food-gradient" id="hero-plate-gradient"></div>
+              <span class="plate-emoji" id="hero-plate-emoji">🍛</span>
+            </div>
+          </div>
+
+          <div class="hero-info">
+            <div class="hero-dish-header">
+              <h2 class="hero-dish-title" id="hero-dish-title">Bisibele Bath</h2>
+              <div class="hero-dish-subtitle" id="hero-dish-kn">ಬಿಸಿಬೇಳೆ ಬಾತ್</div>
+              <p class="hero-dish-tagline" id="hero-dish-tagline">Sunday special rich spiced rice and lentil pot with vegetables & ghee</p>
+            </div>
+
+            <!-- Quick Metrics -->
+            <div class="metrics-row">
+              <div class="metric-pill">
+                <span class="metric-icon">⏱️</span>
+                <span id="hero-metric-time">45 mins</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-icon">🔥</span>
+                <span id="hero-metric-cals">380 kcal</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-icon">💪</span>
+                <span id="hero-metric-protein">9g protein</span>
+              </div>
+            </div>
+
+            <!-- Accompaniments / Sides -->
+            <div class="sides-box">
+              <div class="sides-label" id="hero-sides-label">Served with:</div>
+              <div class="sides-tags" id="hero-sides-container">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-actions">
+              <button class="btn-primary" id="spin-hero-btn">
+                <span>🎯</span> <span id="spin-btn-label">Spin for breakfast</span>
+              </button>
+              <button class="btn-secondary" id="reroll-btn" title="Pick another option from today's pool">
+                <span>🎲</span> <span id="reroll-btn-label">Not today (Reroll)</span>
+              </button>
+              <button class="btn-secondary" id="view-recipe-hero-btn" title="View ingredients and steps">
+                <span>📖</span> <span id="recipe-btn-label">Recipe</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPIN WHEEL CARD (Animated Interactive Picker) -->
+      <div class="spin-section-card" id="wheel-section">
+        <div class="spin-header">
+          <h3 class="spin-title" id="wheel-title">Spin the Breakfast Wheel</h3>
+          <p class="spin-subtitle" id="wheel-sub">Can't decide? Let the wheel pick randomly from today's 7 options!</p>
+        </div>
+
+        <div class="wheel-container">
+          <div class="wheel-pointer"></div>
+          <canvas id="wheel-canvas" width="320" height="320"></canvas>
+          <div class="wheel-center-cap">🍲</div>
+        </div>
+
+        <button class="btn-primary" id="spin-wheel-trigger-btn" style="max-width: 260px; margin: 0 auto;">
+          <span>🎡</span> <span id="spin-wheel-action-text">Spin the Wheel!</span>
+        </button>
+      </div>
+
+      <!-- TODAY'S 7 BREAKFAST OPTIONS POOL -->
+      <div class="options-section">
+        <div class="section-header">
+          <div>
+            <h3 class="section-title" id="pool-section-title">Today's 7 Breakfast Options</h3>
+            <p class="section-subtitle" id="pool-section-sub">Every day has a fixed pool of 7 authentic South Indian choices</p>
+          </div>
+          <span class="pool-counter-badge" id="pool-count-label">7 Dishes</span>
+        </div>
+
+        <div class="dishes-grid" id="dishes-grid-container">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         TAB 2: WEEK (7-Day Overview)
+         ========================================== -->
+    <section id="tab-week" class="tab-content">
+      <div class="section-header" style="margin-top: 16px;">
+        <div>
+          <h2 class="section-title" id="week-view-title">Weekly Breakfast Plan</h2>
+          <p class="section-subtitle" id="week-view-sub">Balanced rotation: Rice, Dosa/Idli, and Roti spread across the week</p>
+        </div>
+      </div>
+
+      <div class="week-container" id="week-accordion-container">
+        <!-- Rendered by JavaScript: Sunday to Saturday cards -->
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 3: BATTER REMINDER
+         ========================================== -->
+    <section id="tab-batter" class="tab-content">
+      <div style="margin-top: 16px;">
+        <div class="batter-hero-card">
+          <div class="batter-bell-header">
+            <span class="batter-bell-icon">🔔</span>
+            <div>
+              <h2 class="batter-hero-title" id="batter-title">Evening Batter Reminder (7:00 PM)</h2>
+              <p class="batter-hero-text" id="batter-sub">
+                Idli, dosa and vada need batter prepared the day before! Check what's needed tonight so tomorrow's breakfast is guaranteed fresh and ready.
+              </p>
+            </div>
+          </div>
+
+          <div class="batter-toggle-row">
+            <div>
+              <div class="batter-toggle-label" id="batter-toggle-title">Batter prepared tonight?</div>
+              <div class="batter-toggle-sub" id="batter-toggle-desc">When ticked, the wheel suggests batter-based dishes. If unticked, it prioritizes instant options.</div>
+            </div>
+            <label class="switch" title="Toggle whether batter is ready">
+              <input type="checkbox" id="batter-ready-toggle" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="batter-toggle-row">
+            <div>
+              <div class="batter-toggle-label" id="fridge-toggle-title">Leftover batter in fridge?</div>
+              <div class="batter-toggle-sub" id="fridge-toggle-desc">One batch of idli/dosa batter lasts 2-3 days in refrigerator.</div>
+            </div>
+            <label class="switch" title="Toggle leftover batter in fridge">
+              <input type="checkbox" id="batter-fridge-toggle">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <div>
+            <h3 class="section-title" id="batter-prep-table-title">Batter Preparation & Soaking Guide</h3>
+            <p class="section-subtitle" id="batter-prep-table-sub">Authentic ratios, soaking durations, and fermentation tips</p>
+          </div>
+        </div>
+
+        <div class="batter-cards-grid" id="batter-cards-container">
+          <!-- Populated by JavaScript from BATTER_GUIDE -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 4: GROCERY
+         ========================================== -->
+    <section id="tab-grocery" class="tab-content">
+      <div style="margin-top: 16px;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title" id="grocery-title">Weekly Grocery Checklist</h2>
+            <p class="section-subtitle" id="grocery-sub">All essential ingredients for the entire week's South Indian breakfast menu</p>
+          </div>
+          <button class="btn-secondary" id="reset-grocery-btn" style="padding: 6px 12px; font-size: 0.8rem; min-height: 36px;">
+            <span>↺</span> <span id="reset-grocery-label">Reset List</span>
+          </button>
+        </div>
+
+        <div class="grocery-container" id="grocery-categories-container">
+          <!-- Populated by JavaScript from GROCERY_CATEGORIES -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 5: MORE & PREFERENCES
+         ========================================== -->
+    <section id="tab-more" class="tab-content">
+      <div class="more-container">
+
+        <!-- Quick Filters -->
+        <div class="more-card">
+          <h3 class="more-card-title"><span>⚡</span> <span id="more-filters-title">Smart Breakfast Filters</span></h3>
+
+          <div class="filter-toggle-row">
+            <div>
+              <div style="font-weight: 700;" id="filter-late-title">"I'm Late" Mode (≤ 20 mins)</div>
+              <div style="font-size: 0.8rem; color: var(--text-secondary);" id="filter-late-sub">Filter pool to fast dishes like Poha, Upma, or Rava Idli</div>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="filter-late-toggle">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="filter-toggle-row">
+            <div>
+              <div style="font-weight: 700;" id="filter-veg-title">Veg Only Today</div>
+              <div style="font-size: 0.8rem; color: var(--text-secondary);" id="filter-veg-sub">Hide egg dishes from today's selection</div>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="filter-veg-toggle">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Share & WhatsApp -->
+        <div class="more-card">
+          <h3 class="more-card-title"><span>💬</span> <span id="more-share-title">Share Today's Breakfast</span></h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;" id="more-share-sub">
+            Let your family or roommates know what's cooking this morning with a single tap!
+          </p>
+          <button class="btn-primary" id="share-whatsapp-btn" style="background: #25D366; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);">
+            <span>📲</span> <span id="share-btn-label">Share on WhatsApp</span>
+          </button>
+        </div>
+
+        <!-- Tradition & Rules info -->
+        <div class="more-card">
+          <h3 class="more-card-title"><span>🌿</span> <span id="more-about-title">About "Indu Tindi Enu?"</span></h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px;">
+            In Karnataka and South Indian homes, the most asked question every sunrise is: <em>"ಇಂದು ತಿಂಡಿ ಏನು?"</em> (What's for breakfast today?).
+          </p>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            This app follows authentic Mandya and Karnataka breakfast culinary traditions: balanced rotation of rice, batter-fermented dosas/idlis, and stone-ground rotis, ensuring nutrition and no breakfast boredom!
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <button class="mobile-nav-item active" data-tab="today">
+      <span class="nav-icon">☀️</span>
+      <span class="nav-label" data-en="Today" data-kn="ಇಂದು">Today</span>
+    </button>
+    <button class="mobile-nav-item" data-tab="week">
+      <span class="nav-icon">📅</span>
+      <span class="nav-label" data-en="Week" data-kn="ವಾರ">Week</span>
+    </button>
+    <button class="mobile-nav-item" data-tab="batter">
+      <span class="nav-icon">🧂</span>
+      <span class="nav-label" data-en="Batter" data-kn="ಹಿಟ್ಟು">Batter</span>
+    </button>
+    <button class="mobile-nav-item" data-tab="grocery">
+      <span class="nav-icon">🛒</span>
+      <span class="nav-label" data-en="Grocery" data-kn="ಪಟ್ಟಿ">Grocery</span>
+    </button>
+    <button class="mobile-nav-item" data-tab="more">
+      <span class="nav-icon">⚙️</span>
+      <span class="nav-label" data-en="More" data-kn="ಇನ್ನಷ್ಟು">More</span>
+    </button>
+  </nav>
+
+  <!-- Dish Detail Modal -->
+  <div class="modal-overlay" id="dish-modal" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <!-- Modal gradient visual header (replaces photo) -->
+      <div class="modal-visual-header" id="modal-visual-header">
+        <div class="modal-visual-bg" id="modal-visual-bg"></div>
+        <div class="dish-visual-plate size-modal" id="modal-plate">
+          <div class="plate-food-gradient" id="modal-plate-gradient"></div>
+          <span class="plate-emoji" id="modal-plate-emoji">🍛</span>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+          <div>
+            <h3 class="modal-dish-title" id="modal-dish-title">Dish Name</h3>
+            <div class="modal-dish-kn" id="modal-dish-kn">ಕನ್ನಡ ಹೆಸರು</div>
+          </div>
+          <span class="category-badge" id="modal-category-badge">Category</span>
+        </div>
+
+        <p id="modal-dish-tagline" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 12px;"></p>
+
+        <!-- Nutrition & Prep Stats -->
+        <div class="metrics-row">
+          <div class="metric-pill">
+            <span class="metric-icon">⏱️</span>
+            <span id="modal-metric-time">25 mins</span>
+          </div>
+          <div class="metric-pill">
+            <span class="metric-icon">🔥</span>
+            <span id="modal-metric-cals">320 kcal</span>
+          </div>
+          <div class="metric-pill">
+            <span class="metric-icon">💪</span>
+            <span id="modal-metric-protein">7g protein</span>
+          </div>
+        </div>
+
+        <!-- Sides / Accompaniments -->
+        <div class="modal-section-title" id="modal-sides-label">Traditional Sides & Chutneys</div>
+        <div class="sides-tags" id="modal-sides-container" style="margin-bottom: 12px;"></div>
+
+        <!-- Ingredients List -->
+        <div class="modal-section-title" id="modal-ingredients-label">Key Ingredients</div>
+        <div class="modal-ingredients-list" id="modal-ingredients-container"></div>
+
+        <!-- Short Recipe Steps -->
+        <div class="modal-section-title" id="modal-recipe-label">How to make it (Short Recipe)</div>
+        <ol class="modal-steps-list" id="modal-steps-container"></ol>
+
+        <!-- Modal Action Footer -->
+        <div style="margin-top: 20px; display: flex; gap: 10px;">
+          <button class="btn-primary" id="modal-select-today-btn" style="flex: 1;">
+            <span>✨</span> <span id="modal-select-btn-text">Make this today's pick</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification element -->
+  <div class="toast-notice" id="toast-notice"></div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="visuals.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
